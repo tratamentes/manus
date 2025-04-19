@@ -1,0 +1,80 @@
+# Configuração básica
+baseURL = "https://tratamentes.pt/"
+languageCode = "pt-pt"
+title = "TrataMentes | Massagem Terapêutica em Lisboa e Cascais"
+theme = "manus"
+
+# Configurações de idiomas
+defaultContentLanguage = "pt"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.pt]
+    languageName = "Português"
+    weight = 1
+    contentDir = "content/pt"
+  [languages.en]
+    languageName = "English"
+    weight = 2
+    contentDir = "content/en"
+
+# Menus
+[menu]
+  [[menu.main]]
+    identifier = "inicio"
+    name = "Início"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "sobre"
+    name = "Sobre"
+    url = "/sobre/"
+    weight = 2
+  [[menu.main]]
+    identifier = "servicos"
+    name = "Serviços"
+    url = "/servicos/"
+    weight = 3
+  [[menu.main]]
+    identifier = "localizacoes"
+    name = "Localizações"
+    url = "/localizacoes/"
+    weight = 4
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 5
+  [[menu.main]]
+    identifier = "galeria"
+    name = "Galeria"
+    url = "/galeria/"
+    weight = 6
+  [[menu.main]]
+    identifier = "contacto"
+    name = "Contacto"
+    url = "/contacto/"
+    weight = 7
+
+# Parâmetros personalizados
+[params]
+  description = "Massagem terapêutica profissional em Lisboa e Cascais. Mais de 20 anos de experiência no alívio de dores e tensões."
+  author = "João Goulart"
+  # Redes sociais
+  instagram = "https://instagram.com/tratamentes"
+  facebook = "https://facebook.com/tratamentes"
+  linkedin = "https://linkedin.com/in/joaogoulart"
+  # Informações de contacto
+  email = "contato@tratamentes.pt"
+  phone = "+351 XXX XXX XXX"
+  # Localizações
+  [params.locations]
+    [params.locations.lisboa1]
+      name = "Lisboa (Braamcamp) "
+      address = "Endereço completo aqui"
+    [params.locations.lisboa2]
+      name = "Lisboa (Alvalade)"
+      address = "Endereço completo aqui"
+    [params.locations.cascais]
+      name = "Cascais (Bairro do Rosário)"
+      address = "Endereço completo aqui"
