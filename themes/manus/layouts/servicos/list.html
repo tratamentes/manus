@@ -1,0 +1,133 @@
+{{ define "main" }}
+<section class="page-header" style="background-image: url('{{ "images/Osteopathy-Banner-5-slade1-e1362392259273-replace.jpg" | relURL }}');">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="page-title">{{ .Title }}</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ .Site.Home.RelPermalink }}">Início</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="services-intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="text-center">
+                    <p class="lead">Oferecemos uma variedade de serviços de massoterapia, adaptados às suas necessidades específicas. Cada tratamento é personalizado para proporcionar alívio, relaxamento e bem-estar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-categories">
+    <div class="container">
+        <div class="category-item">
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <div class="category-image">
+                        <img src="{{ "images/shutterstock_2107220168-replace.jpg" | relURL }}" alt="Massagens de Relaxamento" class="img-fluid rounded">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="category-content">
+                        <h2>Massagens de Relaxamento</h2>
+                        <p>Nossas massagens de relaxamento são projetadas para aliviar o stress, reduzir a tensão muscular e promover uma sensação geral de bem-estar. Utilizamos técnicas suaves e rítmicas que acalmam o sistema nervoso e melhoram a qualidade do sono.</p>
+                        <ul class="service-list">
+                            <li>Massagem Sueca</li>
+                            <li>Massagem com Pedras Quentes</li>
+                            <li>Aromaterapia</li>
+                            <li>Lomi Lomi</li>
+                        </ul>
+                        <a href="/servicos/relaxamento/" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-item">
+            <div class="row align-items-center flex-md-row-reverse">
+                <div class="col-md-5">
+                    <div class="category-image">
+                        <img src="{{ "images/massagem-terapeutica-replace.jpg" | relURL }}" alt="Massagens Terapêuticas" class="img-fluid rounded">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="category-content">
+                        <h2>Massagens Terapêuticas</h2>
+                        <p>Nossas massagens terapêuticas são focadas no alívio de dores e desconfortos específicos. Utilizamos técnicas avançadas para tratar tensões musculares crônicas, melhorar a mobilidade e promover a recuperação física.</p>
+                        <ul class="service-list">
+                            <li>Terapêutica Manual</li>
+                            <li>Massagem Desportiva</li>
+                            <li>Massagem Profunda</li>
+                            <li>Liberação Miofascial</li>
+                            <li>Drenagem Linfática Manual</li>
+                            <li>Reflexologia</li>
+                            <li>Técnica de Ponto-Gatilho</li>
+                            <li>Shiatsu</li>
+                        </ul>
+                        <a href="/servicos/terapeuticas/" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-item">
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <div class="category-image">
+                        <img src="{{ "images/outros-servicos-replace.jpg" | relURL }}" alt="Outros Serviços" class="img-fluid rounded">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="category-content">
+                        <h2>Outros Serviços</h2>
+                        <p>Além das massagens tradicionais, oferecemos serviços especializados para atender a diferentes necessidades e ocasiões.</p>
+                        <ul class="service-list">
+                            <li>Quick Massage</li>
+                            <li>Massagem a Dois</li>
+                        </ul>
+                        <a href="/servicos/outros/" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-item">
+            <div class="row align-items-center flex-md-row-reverse">
+                <div class="col-md-5">
+                    <div class="category-image">
+                        <img src="{{ "images/energeticas.webp" | relURL }}" alt="Reiki e Quantum Touch" class="img-fluid rounded">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="category-content">
+                        <h2>Reiki e Quantum Touch</h2>
+                        <p>Oferecemos abordagens energéticas como complemento não-invasivo e opcional aos nossos tratamentos. Estas técnicas trabalham com o campo energético do corpo para promover equilíbrio e bem-estar.</p>
+                        <ul class="service-list">
+                            <li>Reiki</li>
+                            <li>Quantum Touch</li>
+                        </ul>
+                        <a href="/servicos/energeticas/" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Pronto para Agendar?</h2>
+            <p>Escolha o serviço que melhor atende às suas necessidades e agende sua consulta hoje mesmo.</p>
+            <a href="/agendar/" class="btn btn-accent btn-lg open-booking-modal">Agendar Consulta</a>
+        </div>
+    </div>
+</section>
+{{ end }}

@@ -61,20 +61,20 @@ defaultContentLanguageInSubdir = false
   description = "Massagem terapêutica profissional em Lisboa e Cascais. Mais de 20 anos de experiência no alívio de dores e tensões."
   author = "João Goulart"
   # Redes sociais
-  instagram = "https://instagram.com/tratamentes"
-  facebook = "https://facebook.com/tratamentes"
-  linkedin = "https://linkedin.com/in/joaogoulart"
+  instagram = "https://instagram.com/trata.mentes"
+  facebook = "https://facebook.com/trata.mentes"
+  linkedin = "https://linkedin.com/in/zendomus"
   # Informações de contacto
   email = "contato@tratamentes.pt"
-  phone = "+351 XXX XXX XXX"
+  phone = "+351 937 543 312"
   # Localizações
   [params.locations]
     [params.locations.lisboa1]
       name = "Lisboa (Braamcamp) "
-      address = "Endereço completo aqui"
+      address = "Rua Braamcamp 88, 3º Esq, 1250-050 Lisboa"
     [params.locations.lisboa2]
       name = "Lisboa (Alvalade)"
-      address = "Endereço completo aqui"
+      address = "Rua Jorge Colaço 32A, 1700-253 Lisboa"
     [params.locations.cascais]
-      name = "Cascais (Bairro do Rosário)"
-      address = "Endereço completo aqui"
+      name = "Cascais (Clinica Now)"
+      address = "Av. Eng. Adelino Amaro da Costa 599 A, 2750-279 Cascais"

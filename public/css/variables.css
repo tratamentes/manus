@@ -1,0 +1,61 @@
+:root {
+    /* Cores */
+    --primary: #244B67;
+    --secondary: #a7c8c1;
+    --primary-darker: #2D4458;
+    --accent: #e5aa57;
+    --accent-darker: #c07866;
+    --light: #eaf0ef;
+    --text-secondary: #f4af58;
+    --dark: #333;
+    --success: #20AA24;
+    --success-darker: #0c8535;
+    
+    /* Gradientes */
+    --gradient: linear-gradient(135deg, var(--primary-darker) , var(--primary));
+    --gradient-ud: linear-gradient(180deg, var(--primary), var(--primary-darker));
+    --gradient-ul: linear-gradient(180deg, var(--secondary), var(--light));
+    
+    /* Valores RGB para transparências */
+    --primary-rgb: 45, 65, 88;
+    --primary-darker-rgb: 30, 45, 59;
+    
+    /* Sombras */
+    --shadow: 0 4px 10px rgb(0 0 0 / 10%);
+    
+    /* Tipografia */
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Tamanhos de fonte */
+    --fs-xs: 0.75rem;    /* 12px */
+    --fs-sm: 0.875rem;   /* 14px */
+    --fs-base: 1rem;     /* 16px */
+    --fs-md: 1.125rem;   /* 18px */
+    --fs-lg: 1.25rem;    /* 20px */
+    --fs-xl: 1.5rem;     /* 24px */
+    --fs-2xl: 1.875rem;  /* 30px */
+    --fs-3xl: 2.25rem;   /* 36px */
+    --fs-4xl: 3rem;      /* 48px */
+    
+    /* Pesos de fonte */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-black: 900;
+    
+    /* Altura de linha */
+    --lh-tight: 1.2;
+    --lh-snug: 1.375;
+    --lh-normal: 1.5;
+    --lh-relaxed: 1.625;
+    --lh-loose: 2;
+    
+    /* Breakpoints */
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}

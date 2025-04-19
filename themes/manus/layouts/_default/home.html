@@ -1,7 +1,195 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+<section class="hero" style="background-image: url('{{ "images/terapeuta-bracos-cruzados-1200x630.jpg" | relURL }}');">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Massagem Terapêutica que respeita o seu corpo e mente</h1>
+            <p class="hero-subtitle">Mais de 20 anos de experiência no alívio de tensões e promoção do bem-estar</p>
+            <div class="hero-cta">
+                <a href="/agendar/" class="btn btn-accent btn-lg">Agendar Consulta</a>
+                <a href="/servicos/" class="btn btn-outline btn-lg">Saiba Mais</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="about-image">
+                    <img src="{{ "images/terapeuta.jpg" | relURL }}" alt="João Goulart - Terapeuta" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="about-content">
+                    <h2>João Goulart</h2>
+                    <h3>Massagista Terapêutico</h3>
+                    <p>Com mais de 20 anos de experiência clínica, João Goulart combina técnicas manuais ancestrais com evidência clínica moderna para proporcionar tratamentos personalizados que promovem o alívio de padrões de desconforto físico, tensional e emocional.</p>
+                    <p>Formado em massagem terapêutica pela EAN, 4NTEP e pelo IEFP, com abordagens avançadas pela ESSATLA, trabalha com base nos princípios da osteopatia, integrando toques precisos, conhecimento anatômico e leitura corporal refinada.</p>
+                    <a href="/sobre/" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Nossos Serviços</h2>
+            <p>Tratamentos personalizados para suas necessidades específicas</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="card service-card">
+                <div class="card-body service-card-body">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Relaxation icon SVG -->
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9c.83 0 1.5-.67 1.5-1.5S7.83 8 7 8s-1.5.67-1.5 1.5S6.17 11 7 11zm8-1.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zM9 14h6c.55 0 1-.45 1-1s-.45-1-1-1H9c-.55 0-1 .45-1 1s.45 1 1 1z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Massagens de Relaxamento</h3>
+                    <p class="card-text">Técnicas suaves que promovem o relaxamento profundo, reduzem o stress e melhoram a qualidade do sono.</p>
+                    <a href="/servicos/relaxamento/" class="btn btn-outline">Ver Mais</a>
+                </div>
+            </div>
+            
+            <div class="card service-card">
+                <div class="card-body service-card-body">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Therapeutic icon SVG -->
+                            <path d="M17.73 12.02l3.98-3.98c.39-.39.39-1.02 0-1.41l-4.34-4.34c-.39-.39-1.02-.39-1.41 0l-3.98 3.98L8 2.29C7.8 2.1 7.55 2 7.29 2c-.25 0-.51.1-.7.29L2.25 6.63c-.39.39-.39 1.02 0 1.41l3.98 3.98L2.25 16c-.39.39-.39 1.02 0 1.41l4.34 4.34c.39.39 1.02.39 1.41 0l3.98-3.98 3.98 3.98c.2.2.45.29.71.29.26 0 .51-.1.71-.29l4.34-4.34c.39-.39.39-1.02 0-1.41l-3.99-3.98zM12 9c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-4.71 1.96L3.66 7.34l3.63-3.63 3.62 3.62-3.62 3.63zM10 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm2 2c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm2-4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm4.71 4.68L15.66 12l3.63-3.62 3.62 3.62-3.63 3.63z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Massagens Terapêuticas</h3>
+                    <p class="card-text">Técnicas específicas para alívio de dores musculares, tensões crônicas e melhoria da mobilidade.</p>
+                    <a href="/servicos/terapeuticas/" class="btn btn-outline">Ver Mais</a>
+                </div>
+            </div>
+            
+            <div class="card service-card">
+                <div class="card-body service-card-body">
+                    <div class="service-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Other services icon SVG -->
+                            <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Outros Serviços</h3>
+                    <p class="card-text">Quick Massage, Massagem a Dois, e abordagens energéticas como Reiki e Quantum Touch.</p>
+                    <a href="/servicos/outros/" class="btn btn-outline">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="/servicos/" class="btn btn-primary btn-lg">Todos os Serviços</a>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <div class="container">
+        <div class="section-title">
+            <h2>O Que Dizem Nossos Clientes</h2>
+            <p>Experiências reais de pessoas que confiaram em nossos serviços</p>
+        </div>
+        
+        <div class="testimonial-slider">
+            <div class="testimonial-item">
+                <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+                <p class="testimonial-author">Maria Silva</p>
+                <p class="testimonial-role">Cliente desde 2019</p>
+            </div>
+            
+            <!-- Mais testemunhos serão adicionados aqui -->
+        </div>
+    </div>
+</section>
+
+<section class="why-choose-us">
+    <div class="container">
+        <div class="section-title">
+            <h2>Por Que Escolher-nos</h2>
+            <p>Diferenciais que fazem da TrataMentes a escolha certa para o seu bem-estar</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Experience icon SVG -->
+                        <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3>Experiência</h3>
+                <p>Mais de 20 anos de experiência clínica e formação contínua em técnicas avançadas.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Personalized icon SVG -->
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3>Abordagem Personalizada</h3>
+                <p>Cada tratamento é adaptado às necessidades específicas de cada cliente.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Holistic icon SVG -->
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3>Integração Holística</h3>
+                <p>Combinação de técnicas manuais com abordagens energéticas para um tratamento completo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="locations">
+    <div class="container">
+        <div class="section-title">
+            <h2>Nossas Localizações</h2>
+            <p>Atendimento em pontos estratégicos de Lisboa e Cascais</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-5">
+                <div class="locations-map">
+                    <!-- Aqui será inserido um mapa interativo -->
+                    <img src="{{ "images/map-placeholder.jpg" | relURL }}" alt="Mapa de Localizações" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="locations-list">
+                    {{ range .Site.Params.locations }}
+                    <div class="location-item">
+                        <h3>{{ .name }}</h3>
+                        <p>{{ .address }}</p>
+                    </div>
+                    {{ end }}
+                    
+                    <a href="/localizacoes/" class="btn btn-primary mt-4">Ver Localizações</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Agende Sua Consulta</h2>
+            <p>Dê o primeiro passo para uma vida com mais bem-estar e menos dores</p>
+            <a href="/agendar/" class="btn btn-accent btn-lg">Agendar Agora</a>
+        </div>
+    </div>
+</section>
 {{ end }}
