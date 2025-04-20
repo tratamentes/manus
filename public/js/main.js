@@ -1,38 +1,67 @@
-// Elementos DOM
-document.addEventListener('DOMContentLoaded', function() {
-    // Menu Mobile Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuClose = document.querySelector('.menu-close');
-    const navMobile = document.querySelector('.nav-mobile');
+// main.js - Refatorado
+document.addEventListener('DOMContentLoaded', function () {
+    // Inicializa todas as funcionalidades
+    initNavigation();
+    initHeaderScroll();
+    initStaggeredAnimation();
+    initMobileSubmenu();
+    initAccordion();
+    initContactForm();
+    // Não precisamos chamar setupBookingModal() pois usaremos o agendar.js
+});
+
+/**
+* Inicializa o menu mobile
+*/
+function initNavigation() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelectorAll('.site-nav .nav-link');
+    const siteNav = document.querySelector('.site-nav');
     
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            navMobile.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+    if (mobileMenuToggle && siteNav) {
+      mobileMenuToggle.addEventListener('click', function() {
+        console.log('Menu toggle clicado');
+        siteNav.classList.toggle('menu-open');
+        document.body.style.overflow = siteNav.classList.contains('menu-open') ? 'hidden' : '';
+      });
     }
     
-    if (menuClose) {
-        menuClose.addEventListener('click', function() {
-            navMobile.classList.remove('active');
-            document.body.style.overflow = 'auto';
+    // Fechar menu ao clicar nos links (mobile)
+    if (navLinks.length) {
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (siteNav && siteNav.classList.contains('menu-open')) {
+            siteNav.classList.remove('menu-open');
+            document.body.style.overflow = '';
+          }
         });
+      });
     }
-    
-    // Header Scroll Effect
+}
+
+/**
+ * Header Scroll Effect
+ */
+function initHeaderScroll() {
     const header = document.querySelector('.header');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
-        }
-    });
-    
-    // Staggered Animation
+
+    if (header) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    }
+}
+
+/**
+ * Staggered Animation
+ */
+function initStaggeredAnimation() {
     const staggerItems = document.querySelectorAll('.stagger-item');
-    
+
     if (staggerItems.length > 0) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
@@ -43,239 +72,178 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }, { threshold: 0.1 });
-        
+
         staggerItems.forEach(item => {
             observer.observe(item);
         });
     }
-    
-    // Modal de Agendamento
-    setupBookingModal();
-});
+}
 
-function setupBookingModal() {
-    // Criar elementos do modal
-    const modalHTML = `
-        <div id="bookingModalOverlay" class="modal-overlay">
-            <div id="bookingModal" class="modal">
-                <div class="modal-header">
-                    <h3>Agendar Consulta</h3>
-                    <button id="closeBookingModal" class="modal-close">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="iframe-container">
-                        <div id="loadingSpinner" class="loading-spinner">
-                            <div class="spinner"></div>
-                            <p>A carregar sistema de agendamento...</p>
-                        </div>
-                        <iframe 
-                            id="bukIframe" 
-                            src="https://tratamentes.buk.pt/" 
-                            frameborder="0" 
-                            allowfullscreen
-                            onload="hideSpinner() ">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    // Adicionar modal ao body
-    document.body.insertAdjacentHTML('beforeend', modalHTML);
-    
-    // Adicionar estilos CSS para o modal
-    const modalStyles = `
-        <style>
-            /* Modal Overlay */
-            .modal-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: rgba(var(--primary-darker-rgb), 0.8);
-                z-index: 1000;
-                overflow-y: auto;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(5px);
-            }
-            
-            /* Modal Container */
-            .modal {
-                position: relative;
-                background-color: white;
-                margin: 2rem auto;
-                width: 90%;
-                max-width: 900px;
-                border-radius: 8px;
-                box-shadow: var(--shadow);
-                overflow: hidden;
-                animation: modalFadeIn 0.3s ease;
-            }
-            
-            @keyframes modalFadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(-20px);
+/**
+ * Mobile Submenu Toggle
+ */
+function initMobileSubmenu() {
+    const mobileItems = document.querySelectorAll('.nav-mobile-item');
+
+    mobileItems.forEach(item => {
+        const link = item.querySelector('.nav-mobile-link');
+        const submenu = item.querySelector('.nav-mobile-submenu');
+
+        if (submenu && link) {
+            link.addEventListener('click', function (e) {
+                if (window.innerWidth < 992) {
+                    e.preventDefault();
+                    item.classList.toggle('active');
                 }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            
-            /* Modal Header */
-            .modal-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 1.5rem;
-                background: var(--primary);
-                color: white;
-            }
-            
-            .modal-header h3 {
-                margin: 0;
-                color: white;
-                font-weight: var(--fw-semibold);
-            }
-            
-            .modal-close {
-                background: none;
-                border: none;
-                font-size: 1.5rem;
-                color: white;
-                cursor: pointer;
-                transition: all 0.2s ease;
-            }
-            
-            .modal-close:hover {
-                transform: scale(1.1);
-            }
-            
-            /* Modal Body */
-            .modal-body {
-                padding: 0;
-            }
-            
-            /* Iframe Container */
-            .iframe-container {
-                position: relative;
-                width: 100%;
-                height: 80vh;
-                max-height: 700px;
-            }
-            
-            .iframe-container iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: none;
-            }
-            
-            /* Loading Spinner */
-            .loading-spinner {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                background-color: white;
-                z-index: 1;
-            }
-            
-            .spinner {
-                width: 50px;
-                height: 50px;
-                border: 5px solid var(--light);
-                border-top: 5px solid var(--primary);
-                border-radius: 50%;
-                animation: spin 1s linear infinite;
-            }
-            
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-            
-            /* Responsive Adjustments */
-            @media (max-width: 768px) {
-                .modal {
-                    width: 95%;
-                    margin: 1rem auto;
-                }
-                
-                .iframe-container {
-                    height: 85vh;
-                }
-            }
-        </style>
-    `;
-    
-    document.head.insertAdjacentHTML('beforeend', modalStyles);
-    
-    // Elementos do DOM
-    const openModalButtons = document.querySelectorAll('.open-booking-modal');
-    const modalOverlay = document.getElementById('bookingModalOverlay');
-    const modal = document.getElementById('bookingModal');
-    const closeModalButton = document.getElementById('closeBookingModal');
-    const bukIframe = document.getElementById('bukIframe');
-    const loadingSpinner = document.getElementById('loadingSpinner');
-    
-    // Abrir o modal
-    function openBookingModal() {
-        modalOverlay.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Impedir scroll da página
-        
-        // Reiniciar o iframe se necessário
-        bukIframe.src = bukIframe.src;
-    }
-    
-    // Fechar o modal
-    function closeBookingModal() {
-        modalOverlay.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restaurar scroll da página
-    }
-    
-    // Esconder o spinner quando o iframe carregar
-    window.hideSpinner = function() {
-        if (loadingSpinner) {
-            loadingSpinner.style.display = 'none';
+            });
         }
-    };
-    
-    // Event Listeners
-    if (openModalButtons) {
-        openModalButtons.forEach(button => {
-            button.addEventListener('click', openBookingModal);
-        });
-    }
-    
-    if (closeModalButton) {
-        closeModalButton.addEventListener('click', closeBookingModal);
-    }
-    
-    // Fechar o modal ao clicar fora dele
-    if (modalOverlay) {
-        modalOverlay.addEventListener('click', function(event) {
-            if (event.target === modalOverlay) {
-                closeBookingModal();
+    });
+}
+
+/**
+ * Accordion Functionality
+ */
+function initAccordion() {
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const target = document.querySelector(this.getAttribute('data-bs-target'));
+
+            if (!target) return;
+
+            // Toggle classes
+            target.classList.toggle('show');
+            this.classList.toggle('collapsed');
+
+            // Set aria-expanded attribute
+            const expanded = this.classList.contains('collapsed') ? 'false' : 'true';
+            this.setAttribute('aria-expanded', expanded);
+
+            // Se há um parent, fechar outros itens
+            const parent = this.getAttribute('data-bs-parent');
+            if (parent) {
+                const parentElement = document.querySelector(parent);
+                if (parentElement) {
+                    // Encontra todos os outros itens abertos e fecha-os
+                    const openItems = parentElement.querySelectorAll('.accordion-collapse.show');
+                    openItems.forEach(item => {
+                        if (item !== target) {
+                            item.classList.remove('show');
+
+                            const itemId = item.getAttribute('id');
+                            const itemButton = document.querySelector(`[data-bs-target="#${itemId}"]`);
+                            if (itemButton) {
+                                itemButton.classList.add('collapsed');
+                                itemButton.setAttribute('aria-expanded', 'false');
+                            }
+                        }
+                    });
+                }
             }
         });
-    }
-    
-    // Fechar o modal com a tecla ESC
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modalOverlay.style.display === 'block') {
-            closeBookingModal();
-        }
+    });
+}
+
+/**
+ * Contact Form Handling
+ */
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Mostra estado de carregamento
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'A enviar...';
+        submitButton.disabled = true;
+
+        // Obtém dados do formulário
+        const formData = new FormData(contactForm);
+        const formDataObj = Object.fromEntries(formData.entries());
+
+        // Aqui você deve implementar o envio real do formulário
+        // Usando fetch API (descomente e adapte conforme necessário)
+
+        fetch('seu-endpoint-de-formulario', {
+            method: 'POST',
+            body: JSON.stringify(formDataObj),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro no envio do formulário');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Sucesso
+                formStatus.innerHTML = `
+                <div class="alert-success">
+                    <p><strong>Mensagem enviada com sucesso!</strong></p>
+                    <p>Obrigado pelo seu contacto. Responderemos o mais brevemente possível.</p>
+                </div>
+            `;
+                contactForm.reset();
+            })
+            .catch(error => {
+                // Erro
+                formStatus.innerHTML = `
+                <div class="alert-error">
+                    <p><strong>Erro ao enviar mensagem.</strong></p>
+                    <p>Por favor, tente novamente mais tarde ou contacte-nos por telefone.</p>
+                </div>
+            `;
+                console.error('Erro:', error);
+            })
+            .finally(() => {
+                // Restaura o botão
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+
+                // Mostra a mensagem de status
+                formStatus.style.display = 'block';
+                formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                // Oculta a mensagem após 5 segundos
+                setTimeout(() => {
+                    formStatus.style.display = 'none';
+                }, 5000);
+            });
+
+        /* Remova este bloco se implementar o fetch acima
+        setTimeout(function() {
+            // Simulação de envio bem-sucedido
+            formStatus.innerHTML = `
+                <div class="alert-success">
+                    <p><strong>Mensagem enviada com sucesso!</strong></p>
+                    <p>Obrigado pelo seu contacto. Responderemos o mais brevemente possível.</p>
+                </div>
+            `;
+            formStatus.style.display = 'block';
+            
+            // Reset do formulário
+            contactForm.reset();
+            
+            // Reset do botão
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+            
+            // Scroll para a mensagem
+            formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Oculta a mensagem após 5 segundos
+            setTimeout(function() {
+                formStatus.style.display = 'none';
+            }, 5000);
+        }, 1500);
+        */
     });
 }

@@ -46,15 +46,11 @@ defaultContentLanguageInSubdir = false
     url = "/blog/"
     weight = 5
   [[menu.main]]
-    identifier = "galeria"
-    name = "Galeria"
-    url = "/galeria/"
-    weight = 6
-  [[menu.main]]
     identifier = "contacto"
     name = "Contacto"
     url = "/contacto/"
-    weight = 7
+    weight = 6
+
 
 # Parâmetros personalizados
 [params]

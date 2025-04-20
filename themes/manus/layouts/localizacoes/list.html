@@ -1,0 +1,306 @@
+{{ define "main" }}
+<section class="page-header" style="background-image: url('{{ "images/locations-header.jpg" | relURL }}');">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="page-title">{{ .Title }}</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ .Site.Home.RelPermalink }}">Início</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="locations-intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="text-center">
+                    <p class="lead">{{ .Content }}</p>
+                    <p>Escolha a localização mais conveniente para si e agende a sua consulta.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="locations-list">
+    <div class="container">
+        <!-- Lisboa Braamcamp -->
+        <div class="location-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="location-map">
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.2758857509283!2d-9.15529!3d38.7267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19330dd67506a9%3A0x891e3f085e6114ea!2sR.%20Braamcamp%2C%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1650000000000!5m2!1spt-PT!2spt" 
+                                width="100%" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="location-details">
+                        <h2>Lisboa (Braamcamp) </h2>
+                        <div class="location-info">
+                            <div class="location-info-item">
+                                <div class="location-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="location-text">
+                                    <h3>Endereço</h3>
+                                    <p>Rua Braamcamp, Avenidas Novas<br>Lisboa, Portugal</p>
+                                </div>
+                            </div>
+                            
+                            <div class="location-info-item">
+                                <div class="location-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" fill="currentColor"/>
+                                        <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="location-text">
+                                    <h3>Horário</h3>
+                                    <p>Segunda a Sexta: 9h às 20h<br>Sábado: 9h às 13h<br>Domingo: Fechado</p>
+                                </div>
+                            </div>
+                            
+                            <div class="location-info-item">
+                                <div class="location-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM5 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zm5.8-10l2.4-2.4.8.8c1.3 1.3 3 2.1 5.1 2.1V9c-1.5 0-2.7-.6-3.6-1.5l-1.9-1.9c-.5-.4-1-.6-1.6-.6s-1.1.2-1.4.6L7.8 8.4c-.4.4-.6.9-.6 1.4 0 .6.2 1.1.6 1.4L11 14v5h2v-6.2l-2.2-2.3zM19 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="location-text">
+                                    <h3>Transportes</h3>
+                                    <p>Metro: Marquês de Pombal (5 min a pé) <br>Autocarros: 702, 711, 736<br>Estacionamento: Parque Marquês de Pombal</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="/agendar/" class="btn btn-primary mt-4 open-booking-modal">Agendar nesta Localização</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lisboa Alvalade -->
+        <div class="location-item">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-6">
+                    <div class="location-map">
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.7677848861257!2d-9.14667!3d38.7573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933a3d5920cb3%3A0x1d480f6feae2893!2sAlvalade%2C%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1650000000000!5m2!1spt-PT!2spt" 
+                                width="100%" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="location-details">
+                        <h2>Lisboa (Alvalade) </h2>
+                        <div class="location-info">
+                            <div class="location-info-item">
+                                <div class="location-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="location-text">
+                                    <h3>Endereço</h3>
+                                    <p>Avenida da Igreja, Alvalade<br>Lisboa, Portugal</p>
+                                </div>
+                            </div>
+                            
+                            <div class="location-info-item">
+                                <div class="location-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" fill="currentColor"/>
+                                        <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="location-text">
+                                    <h3>Horário</h3>
+                                    <p>Segunda a Sexta: 10h às 20h<br>Sábado: 10h às 14h<br>Domingo: Fechado</p>
+                                </div>
+                            </div>
+                            
+                            <div class="location-info-item">
+                                <div class="location-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM5 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zm5.8-10l2.4-2.4.8.8c1.3 1.3 3 2.1 5.1 2.1V9c-1.5 0-2.7-.6-3.6-1.5l-1.9-1.9c-.5-.4-1-.6-1.6-.6s-1.1.2-1.4.6L7.8 8.4c-.4.4-.6.9-.6 1.4 0 .6.2 1.1.6 1.4L11 14v5h2v-6.2l-2.2-2.3zM19 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="location-text">
+                                    <h3>Transportes</h3>
+                                    <p>Metro: Alvalade (2 min a pé) <br>Autocarros: 735, 744, 783<br>Estacionamento: Parque Alvalade XXI</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="/agendar/" class="btn btn-primary mt-4 open-booking-modal">Agendar nesta Localização</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cascais -->
+        <div class="location-item">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="location-map">
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.8962247421184!2d-9.42291!3d38.7139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ec4424408b15b%3A0x4c2eb688a7af7be7!2sBairro%20do%20Ros%C3%A1rio%2C%20Cascais!5e0!3m2!1spt-PT!2spt!4v1650000000000!5m2!1spt-PT!2spt" 
+                                width="100%" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="location-details">
+                        <h2>Cascais (Bairro do Rosário) </h2>
+                        <div class="location-info">
+                            <div class="location-info-item">
+                                <div class="location-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="location-text">
+                                    <h3>Endereço</h3>
+                                    <p>Rua do Rosário, Bairro do Rosário<br>Cascais, Portugal</p>
+                                </div>
+                            </div>
+                            
+                            <div class="location-info-item">
+                                <div class="location-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" fill="currentColor"/>
+                                        <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="location-text">
+                                    <h3>Horário</h3>
+                                    <p>Segunda a Sexta: 9h às 19h<br>Sábado: 10h às 15h<br>Domingo: Fechado</p>
+                                </div>
+                            </div>
+                            
+                            <div class="location-info-item">
+                                <div class="location-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM5 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5zm5.8-10l2.4-2.4.8.8c1.3 1.3 3 2.1 5.1 2.1V9c-1.5 0-2.7-.6-3.6-1.5l-1.9-1.9c-.5-.4-1-.6-1.6-.6s-1.1.2-1.4.6L7.8 8.4c-.4.4-.6.9-.6 1.4 0 .6.2 1.1.6 1.4L11 14v5h2v-6.2l-2.2-2.3zM19 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.5c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="location-text">
+                                    <h3>Transportes</h3>
+                                    <p>Comboio: Cascais (15 min a pé) <br>Autocarros: 406, 415, 427<br>Estacionamento: Disponível nas proximidades</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="/agendar/" class="btn btn-primary mt-4 open-booking-modal">Agendar nesta Localização</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="locations-faq bg-light">
+    <div class="container">
+        <div class="section-title">
+            <h2>Perguntas Frequentes</h2>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="accordion" id="locationsFaq">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Preciso marcar com antecedência?
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#locationsFaq">
+                            <div class="accordion-body">
+                                Sim, recomendamos que agende a sua consulta com pelo menos 24 horas de antecedência para garantir disponibilidade. Em casos urgentes, pode contactar-nos diretamente para verificar disponibilidade no mesmo dia.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Posso escolher qualquer localização para o meu tratamento?
+                            </button>
+                        </h3>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#locationsFaq">
+                            <div class="accordion-body">
+                                Sim, pode escolher qualquer uma das nossas localizações de acordo com a sua conveniência. O terapeuta João Goulart atende em todas as localizações, mas em dias específicos da semana. Ao agendar, verá a disponibilidade para cada local.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Existe estacionamento disponível?
+                            </button>
+                        </h3>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#locationsFaq">
+                            <div class="accordion-body">
+                                Todas as nossas localizações têm opções de estacionamento nas proximidades. Em Lisboa, recomendamos os parques de estacionamento mencionados. Em Cascais, há estacionamento na rua e um pequeno parque próximo ao local.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Quanto tempo devo chegar antes da minha consulta?
+                            </button>
+                        </h3>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#locationsFaq">
+                            <div class="accordion-body">
+                                Recomendamos que chegue cerca de 10 minutos antes da sua consulta, especialmente se for a primeira vez. Isso dará tempo para preencher qualquer formulário necessário e relaxar um pouco antes do tratamento.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Pronto para Agendar?</h2>
+            <p>Escolha a localização mais conveniente e agende a sua consulta hoje mesmo.</p>
+            <a href="/agendar/" class="btn btn-accent btn-lg open-booking-modal">Agendar Consulta</a>
+        </div>
+    </div>
+</section>
+{{ end }}

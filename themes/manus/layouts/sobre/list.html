@@ -1,0 +1,183 @@
+{{ define "main" }}
+<section class="page-header" style="background-image: url('{{ "images/Osteopathy-Banner-5-slade1-e1362392259273-replace.jpg" | relURL }}');">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="page-title">{{ .Title }}</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ .Site.Home.RelPermalink }}">Início</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="about-intro">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="about-image">
+                    <img src="{{ "images/terapeuta-bracos-cruzados-2.webp" | relURL }}" alt="João Goulart - Terapeuta" class="img-fluid rounded shadow">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="about-content">
+                    <h2>João Goulart</h2>
+                    <h3>Massagista Terapêutico</h3>
+                    <p class="lead">{{ .Content }}</p>
+                    <p>Formado em massagem terapêutica pela EAN, 4NTEP e pelo IEFP, com abordagens avançadas pela ESSATLA, trabalha com base nos princípios da osteopatia, integrando toques precisos, conhecimento anatômico e leitura corporal refinada.</p>
+                    <p>Certificado em Reiki e Quantum Touch, aplicando estas abordagens energéticas como complemento não-invasivo e opcional, sempre respeitando a escolha informada do cliente.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-philosophy bg-light">
+    <div class="container">
+        <div class="section-title">
+            <h2>Filosofia de Tratamento</h2>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="philosophy-content text-center">
+                    <p class="lead">Atendimento individualizado, com escuta ativa e presença total.</p>
+                    <p>Acredito no poder do toque informado como ferramenta para facilitar o equilíbrio corporal, reduzir padrões de tensão acumulada e promover maior liberdade funcional.</p>
+                    <p>Minha abordagem é progressiva, respeitosa e centrada na pessoa – nunca na promessa de "curas", mas sim no processo de transformação e bem-estar sustentado.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9c.83 0 1.5-.67 1.5-1.5S7.83 8 7 8s-1.5.67-1.5 1.5S6.17 11 7 11zm8-1.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zM12 16c-1.61 0-3.09-.59-4.23-1.57.22-.37.48-.7.98-.7.27 0 .51.11.71.29.79.73 1.79 1.14 2.54 1.14s1.75-.41 2.54-1.14c.2-.18.44-.29.71-.29.5 0 .76.33.98.7C14.09 15.41 12.61 16 12 16z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Cuidado Autêntico</h3>
+                    <p>Cada sessão é conduzida com atenção plena e dedicação total às necessidades específicas de cada cliente.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Respeito</h3>
+                    <p>Respeito pela individualidade, limites e escolhas de cada pessoa, criando um ambiente seguro e acolhedor.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Evidência</h3>
+                    <p>Combinação de conhecimento tradicional com evidências científicas atuais para oferecer o melhor tratamento possível.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-experience">
+    <div class="container">
+        <div class="section-title">
+            <h2>Formação e Experiência</h2>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Formação em Massagem Terapêutica</h3>
+                    <p class="timeline-date">EAN, 4NTEP e IEFP</p>
+                    <p>Formação completa em técnicas de massagem terapêutica, com foco em anatomia, fisiologia e biomecânica.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Abordagens Avançadas</h3>
+                    <p class="timeline-date">ESSATLA</p>
+                    <p>Especialização em técnicas avançadas de terapia manual, com base nos princípios da osteopatia.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Certificação em Reiki</h3>
+                    <p>Formação completa em Reiki, técnica de canalização de energia para promoção do equilíbrio e bem-estar.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Certificação em Quantum Touch</h3>
+                    <p>Especialização em Quantum Touch, técnica energética que utiliza a respiração e a intenção para facilitar a cura natural do corpo.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Mais de 20 Anos de Experiência Clínica</h3>
+                    <p>Duas décadas de prática clínica, atendendo milhares de clientes com diferentes necessidades e condições.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-approach bg-light">
+    <div class="container">
+        <div class="section-title">
+            <h2>Abordagem Única</h2>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="approach-content">
+                    <h3>União entre Tradição e Ciência</h3>
+                    <p>Minha abordagem combina técnicas manuais ancestrais com evidência clínica moderna, criando um equilíbrio entre sabedoria tradicional e conhecimento científico.</p>
+                    
+                    <h3>Protocolos Adaptativos</h3>
+                    <p>Cada sessão é personalizada de acordo com as necessidades específicas do cliente, com protocolos adaptativos que evoluem conforme a resposta do corpo.</p>
+                    
+                    <h3>Integração com Outros Profissionais</h3>
+                    <p>Quando necessário, trabalho em conjunto com outros profissionais de saúde, como nutricionistas, médicos de medicina integrativa e especialistas em biomagnetismo, para oferecer um cuidado mais completo.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="approach-image">
+                    <img src="{{ "images/Osteopathy-Banner-5-slade1-e1362392259273-replace.jpg" | relURL }}" alt="Abordagem Única" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Pronto para Experimentar?</h2>
+            <p>Agende sua consulta e descubra como posso ajudar a melhorar sua qualidade de vida.</p>
+            <a href="/agendar/" class="btn btn-accent btn-lg open-booking-modal">Agendar Consulta</a>
+        </div>
+    </div>
+</section>
+{{ end }}

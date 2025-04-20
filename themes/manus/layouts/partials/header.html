@@ -1,68 +1,36 @@
 <header class="header">
-    <div class="container header-container">
-        <a href="{{ .Site.Home.RelPermalink }}" class="logo">
-            <img src="{{ "images/logotipo-tratamentes-pt.svg" | relURL }}" alt="{{ .Site.Title }}" class="logo-img">
-        </a>
-        
-        <nav class="nav-desktop">
-            <ul class="nav-menu">
-                {{ range .Site.Menus.main }}
-                <li class="nav-item">
-                    <a href="{{ .URL }}" class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}">
-                        {{ .Name }}
-                    </a>
-                </li>
-                {{ end }}
-            </ul>
-        </nav>
-        
-        <div class="header-actions">
-            <div class="language-selector">
-                {{ range .Site.Languages }}
-                <a href="{{ cond (eq $.Site.Language.Lang .Lang) "#" (printf "/%s%s" .Lang $.RelPermalink) }}" 
-                   class="lang-link{{ if eq $.Site.Language.Lang .Lang }} active{{ end }}">
-                    {{ .Lang | upper }}
-                </a>
-                {{ end }}
-            </div>
-            
-            <a href="/agendar/" class="btn btn-primary header-cta">Agendar</a>
-            
-            <button class="menu-toggle" aria-label="Menu">
-                <span class="menu-icon"></span>
-            </button>
+  <div class="container">
+    <nav class="site-nav" aria-label="Navegação principal">
+      <div class="site-nav-container">
+        <div class="logo-container">
+          <a href="{{ .Site.Home.RelPermalink }}" aria-label="Página inicial">
+            <img src="{{ "images/logotipo-tratamentes-pt-inv.svg" | relURL }}" alt="{{ .Site.Title }}" width="200"
+              height="41">
+          </a>
         </div>
-        
-        <nav class="nav-mobile">
-            <div class="nav-mobile-header">
-                <a href="{{ .Site.Home.RelPermalink }}" class="logo">
-                    <img src="{{ "images/logotipo-tratamentes-pt.svg" | relURL }}" alt="{{ .Site.Title }}" class="logo-img">
-                </a>
-                <button class="menu-close" aria-label="Fechar menu">×</button>
-            </div>
-            
-            <ul class="nav-mobile-menu">
-                {{ range .Site.Menus.main }}
-                <li class="nav-mobile-item">
-                    <a href="{{ .URL }}" class="nav-mobile-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}">
-                        {{ .Name }}
-                    </a>
-                </li>
-                {{ end }}
-            </ul>
-            
-            <div class="nav-mobile-footer">
-                <a href="/agendar/" class="btn btn-primary btn-block">Agendar Consulta</a>
-                
-                <div class="language-selector">
-                    {{ range .Site.Languages }}
-                    <a href="{{ cond (eq $.Site.Language.Lang .Lang) "#" (printf "/%s%s" .Lang $.RelPermalink) }}" 
-                       class="lang-link{{ if eq $.Site.Language.Lang .Lang }} active{{ end }}">
-                        {{ .Lang | upper }}
-                    </a>
-                    {{ end }}
-                </div>
-            </div>
-        </nav>
-    </div>
+        <button class="mobile-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="{{ .Site.Home.RelPermalink }}" class="nav-link{{ if .IsHome }} active{{ end }}">Início</a>
+          <a href="/sobre/" class="nav-link{{ if eq .RelPermalink " /sobre/" }} active{{ end }}">Sobre</a>
+          <a href="/servicos/" class="nav-link{{ if in .RelPermalink " /servicos/" }} active{{ end }}">Serviços</a>
+          <a href="/blog/" class="nav-link{{ if in .RelPermalink " /blog/" }} active{{ end }}">Blog</a>
+          <a href="/contacto/" class="nav-link{{ if eq .RelPermalink " /contacto/" }} active{{ end }}">Contacto</a>
+          <a href="#" class="nav-link cta-btn btn-agendamento">Agendar</a>
+
+          <div class="language-selector">
+            {{ range .Site.Languages }}
+            <a href="{{ cond (eq $.Site.Language.Lang .Lang) " #" (printf "/%s%s" .Lang $.RelPermalink) }}"
+              class="lang-link{{ if eq $.Site.Language.Lang .Lang }} active{{ end }}">
+              {{ .Lang | upper }}
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
 </header>

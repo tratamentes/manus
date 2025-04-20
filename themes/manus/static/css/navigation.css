@@ -1,0 +1,186 @@
+/* navigation.css */
+
+/* Estilos base da navegação */
+header.header {
+    background-color: var(--primary); 
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.site-nav {
+    padding: 15px 0;
+}
+
+
+.site-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-nav .logo-container {
+    margin: 0;
+}
+
+.site-nav .logo-container img {
+    display: block;
+    height: auto;
+    max-height: 40px;
+}
+
+.site-nav .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.site-nav .nav-link {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+.site-nav .nav-link:hover {
+    color: var(--accent);
+}
+
+.site-nav .nav-link.active {
+    color: var(--accent);
+    position: relative;
+}
+
+.site-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.site-nav .nav-link.cta-btn {
+    background-color: var(--success);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.site-nav .nav-link.cta-btn:hover {
+    background-color: var(--success-darker);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--light);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+}
+
+.lang-link {
+    padding: 0.25rem 0.5rem;
+    font-size: var(--fs-sm);
+    color: var(--light); /* Alterado para light */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.lang-link.active {
+    font-weight: var(--fw-bold);
+    color: white; /* Destaque mais forte para o item ativo */
+    text-decoration: underline; /* Opcional: adiciona sublinhado para destacar mais */
+}
+
+.lang-link:not(:last-child)::after {
+    content: '|';
+    margin-left: 0.5rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.lang-link:hover {
+    color: white; /* Muda para branco no hover */
+}
+
+/* Estilos responsivos da navegação */
+@media (max-width: 991px) {
+    .site-nav-container {
+        position: relative;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1002;
+    }
+    
+    .site-nav .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--primary);
+        flex-direction: column;
+        padding: 70px 20px 20px;
+        z-index: 1001;
+        align-items: flex-start;
+    }
+    
+    .site-nav.menu-open .nav-links {
+        display: flex;
+    }
+    
+    .site-nav .nav-link {
+        padding: 12px 0;
+        font-size: 18px;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .site-nav.menu-open .mobile-menu-toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .site-nav.menu-open .mobile-menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .site-nav.menu-open .mobile-menu-toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    
+    .language-selector {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+}

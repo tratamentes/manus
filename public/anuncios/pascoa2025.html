@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Curvo em Círculo</title>
+    <style>
+        :root {
+            /* Cores da marca em versões mais leves */
+            --primary-light: #a7c8c1;
+            --primary-lighter: #d8e6e2;
+            --accent: #e5aa57;
+            --accent-light: #f4d9b5;
+            --blue-accent: #244B67;
+            --blue-lighter: #6a8ba3;
+            --light: #eaf0ef;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Garamond', 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .anuncio {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--white) 0%, var(--primary-lighter) 100%);
+            color: var(--blue-accent);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 280px;
+        }
+
+        .container {
+            position: relative;
+            width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .top-text {
+            text-align: center;
+            margin-bottom: 40px;
+            z-index: 3;
+        }
+
+        .intro {
+            font-size: 90px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            color: var(--blue-accent);
+        }
+
+        .sub-intro {
+            font-size: 80px;
+            font-weight: 500;
+            font-style: italic;
+            margin-top: 0;
+            color: var(--accent);
+        }
+
+        .image-circle-wrapper {
+            position: relative;
+            width: 700px;
+            height: 700px;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 580px;
+            height: 580px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(167, 200, 193, 0.5);
+            border: 3px solid var(--white);
+            z-index: 1;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-lighter);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .curved-text-container {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .curved-text {
+            width: 100%;
+            height: 100%;
+        }
+
+        .curved-text text {
+            font-size: 37px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            fill: var(--accent);
+        }
+
+        .bottom-text {
+            text-align: center;
+            margin-top: 40px;
+            max-width: 900px;
+            font-size: 60px;
+            line-height: 1.2;
+            color: var(--blue-accent);
+            z-index: 3;
+        }
+
+        .logo-container {
+            margin-top: 60px;
+            padding: 0px;
+            text-align: center;
+            z-index: 3;   }
+        
+        .logo-container img {
+            max-width: 326px;
+            height: auto;
+        }
+        /* Novo estilo para as informações de contato */
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 38px;
+            color: var(--blue-accent);
+            font-weight: 500;
+            letter-spacing: 1px;
+            z-index: 3;
+        }
+        
+        .contact-info .dot {
+            color: var(--accent);
+            font-size: 26px;
+            margin: 0 8px;
+            vertical-align: middle;
+        }
+        
+        /* Elementos decorativos para o fundo */
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .bg-element-1 {
+            width: 400px;
+            height: 400px;
+            background-color: var(--primary-light);
+            top: 10%;
+            left: 5%;
+        }
+        
+        .bg-element-2 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--accent-light);
+            bottom: 15%;
+            right: 10%;
+        }
+        
+        .bg-element-3 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--blue-lighter);
+            top: 60%;
+            right: 20%;
+        }
+        
+        .bg-element-4 {
+            width: 250px;
+            height: 250px;
+            background-color: var(--primary-lighter);
+            bottom: 30%;
+            left: 15%;
+        }
+    </style>
+</head>
+<body>
+    <div class="anuncio">
+        <!-- Elementos de fundo decorativos -->
+        <div class="bg-element bg-element-1"></div>
+        <div class="bg-element bg-element-2"></div>
+        <div class="bg-element bg-element-3"></div>
+        <div class="bg-element bg-element-4"></div>
+        
+        <div class="container">
+            <!-- Texto introdutório -->
+            <div class="top-text">
+                <h1 class="intro">Para além dos rituais<br>desta época festiva</h1>
+                <p class="sub-intro">Existe um momento valioso.</p>
+            </div>
+
+            <div class="image-circle-wrapper">
+                <!-- Área da imagem -->
+                <div class="image-container">
+                    <div class="image-placeholder">
+                        <img src="/themes/manus/static/images/energeticas.webp" alt="Terapia Manual Rejuvenescedora" />
+                    </div>
+                </div>
+
+                <!-- Texto curvo -->
+                <div class="curved-text-container">
+                    <svg class="curved-text" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                        <path id="circlePath" 
+                            d="M250,40 
+                                A210,210 0 1,1 249.9,40" 
+                            fill="transparent" />
+                            
+                        <text>
+                            <textPath xlink:href="#circlePath" startOffset="0%">
+                                &nbsp;●&nbsp; RECONECTAR-SE &nbsp;●&nbsp; RECONECTAR-SE &nbsp;● &nbsp; RECONECTAR-SE&nbsp;
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Texto conclusivo -->
+            <div class="bottom-text">
+                <p>Permita que a terapia manual integrativa desperte o seu corpo para uma nova consciência.</p>
+            </div>
+            
+            <!-- Logotipo com borda -->
+            <div class="logo-container">
+                <img src="/themes/manus/static/images/logotipo-tratamentes-pt.svg" alt="Logotipo da TrataMentes">
+            </div>
+
+            <!-- Informações de contato -->
+            <div class="contact-info">
+                +351 937 543 312 <span class="dot">●</span> @trata.mentes <span class="dot">●</span> tratamentes.pt
+            </div>
+        </div>
+    </div>
+</body>
+</html>

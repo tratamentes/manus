@@ -35,15 +35,15 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -1rem;
-    margin-left: -1rem;
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
 }
 
 .col {
     position: relative;
     width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
 }
 
 /* Colunas responsivas */
@@ -154,11 +154,13 @@ section {
     min-height: 500px;
     display: flex;
     align-items: center;
-    background-position: center;
+    background-position: 25% 30%;
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    margin-top: 80px; /* Altura do header */
+    margin-top: 0px; 
+    padding-top: 80px; /* Altura do header */
+
 }
 
 .hero::before {
@@ -168,13 +170,14 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to right, rgba(var(--primary-darker-rgb), 0.8), rgba(var(--primary-rgb), 0.6));
+    background: linear-gradient(to right, rgba(var(--primary-darker-rgb), 0.7), rgba(var(--primary-rgb), 0.5));
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     max-width: 600px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .hero-title {
