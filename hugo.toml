@@ -9,68 +9,86 @@ defaultContentLanguage = "pt"
 defaultContentLanguageInSubdir = false
 
 [languages]
-  [languages.pt]
-    languageName = "Português"
-    weight = 1
-    contentDir = "content/pt"
-  [languages.en]
-    languageName = "English"
-    weight = 2
-    contentDir = "content/en"
+[languages.pt]
+languageName = "Português"
+weight = 1
+contentDir = "content/pt"
+[languages.en]
+languageName = "English"
+weight = 2
+contentDir = "content/en"
 
 # Menus
 [menu]
-  [[menu.main]]
-    identifier = "inicio"
-    name = "Início"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    identifier = "sobre"
-    name = "Sobre"
-    url = "/sobre/"
-    weight = 2
-  [[menu.main]]
-    identifier = "servicos"
-    name = "Serviços"
-    url = "/servicos/"
-    weight = 3
-  [[menu.main]]
-    identifier = "localizacoes"
-    name = "Localizações"
-    url = "/localizacoes/"
-    weight = 4
-  [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/blog/"
-    weight = 5
-  [[menu.main]]
-    identifier = "contacto"
-    name = "Contacto"
-    url = "/contacto/"
-    weight = 6
+[[menu.main]]
+identifier = "inicio"
+name = "Início"
+url = "/"
+weight = 1
+[[menu.main]]
+identifier = "sobre"
+name = "Sobre"
+url = "/sobre/"
+weight = 2
+[[menu.main]]
+identifier = "servicos"
+name = "Serviços"
+url = "/servicos/"
+weight = 3
+[[menu.main]]
+identifier = "localizacoes"
+name = "Localizações"
+url = "/localizacoes/"
+weight = 4
+[[menu.main]]
+identifier = "blog"
+name = "Blog"
+url = "/blog/"
+weight = 5
+[[menu.main]]
+identifier = "contacto"
+name = "Contacto"
+url = "/contacto/"
+weight = 6
 
 
 # Parâmetros personalizados
 [params]
-  description = "Massagem terapêutica profissional em Lisboa e Cascais. Mais de 20 anos de experiência no alívio de dores e tensões."
-  author = "João Goulart"
-  # Redes sociais
-  instagram = "https://instagram.com/trata.mentes"
-  facebook = "https://facebook.com/trata.mentes"
-  linkedin = "https://linkedin.com/in/zendomus"
-  # Informações de contacto
-  email = "contato@tratamentes.pt"
-  phone = "+351 937 543 312"
-  # Localizações
-  [params.locations]
-    [params.locations.lisboa1]
-      name = "Lisboa (Braamcamp) "
-      address = "Rua Braamcamp 88, 3º Esq, 1250-050 Lisboa"
-    [params.locations.lisboa2]
-      name = "Lisboa (Alvalade)"
-      address = "Rua Jorge Colaço 32A, 1700-253 Lisboa"
-    [params.locations.cascais]
-      name = "Cascais (Clinica Now)"
-      address = "Av. Eng. Adelino Amaro da Costa 599 A, 2750-279 Cascais"
+description = "Massagem terapêutica profissional em Lisboa e Cascais. Mais de 20 anos de experiência no alívio de dores e tensões."
+author = "João Goulart"
+# Redes sociais
+instagram = "https://instagram.com/trata.mentes"
+facebook = "https://facebook.com/trata.mentes"
+linkedin = "https://linkedin.com/in/zendomus"
+# Informações de contacto
+email = "contato@tratamentes.pt"
+phone = "+351 937 543 312"
+# Localizações
+[[params.locations]]
+name = "Lisboa - Braamcamp"
+address = "Rua Braamcamp 88, 3º Esq, 1250-050 Lisboa"
+hours = "Terças e quintas-feiras das 10:00 às 19:00"
+features = ["Estacionamento próximo", "Acesso por elevador", "Climatizado"]
+mapSrc = "images/map-placeholder.jpg"
+directionsUrl = "https://maps.app.goo.gl/xNX9tf9qe9dw9XP2A"
+mapiframe = "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.844308131101!2d-9.15521772337614!3d38.72138337176214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ecfacdde721a5%3A0xc246adeb8e5f2af4!2sTrataMentes%20-%20Braamcamp%20-%20Espa%C3%A7o%20de%20Bem-Estar%20e%20Terapias%20Hol%C3%ADsticas!5e0!3m2!1spt-PT!2spt!4v1745202589305!5m2!1spt-PT!2spt' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>"
+
+[[params.locations]]
+name = "Lisboa - Alvalade"
+address = "Rua Jorge Colaço 32A, 1700-253 Lisboa"
+hours = "Segundas e sextas-feiras das 10:00 às 20:00"
+features = ["Estacionamento (Area Verde)", "Transporte público","Ambiente tranquilo",]
+mapSrc = "images/map-placeholder.jpg"
+directionsUrl = "https://maps.app.goo.gl/odSVSp3b9MbAMMBL7"
+
+[[params.locations]]
+name = "Cascais - Clínica Now"
+address = "Av. Eng. Adelino Amaro da Costa 599 A, 2750-279 Cascais"
+hours = "Quartas-feiras das 10:00 às 19:00"
+features = [
+  "Estacionamento gratuito",
+  "Ambiente tranquilo",
+  "Recepção dedicada", "Climatizado",
+]
+mapSrc = "images/map-placeholder.jpg"
+directionsUrl = "https://www.google.com/maps/dir//Cl%C3%ADnica+Now,+Avenida+Engenheiro+Adelino+Amaro+da+Costa+A,+Cascais/@38.7044179,-9.4718582,13z/data=!3m1!5s0xd19337a6a65db87:0x57fe58ff24402a5e!4m9!4m8!1m0!1m5!1m1!1s0xd1ec50059e4b19d:0x5f059b291bc03ff0!2m2!1d-9.4307669!2d38.7043944!3e0?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D"

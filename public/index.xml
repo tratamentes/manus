@@ -43,5 +43,19 @@
       <guid>http://localhost:1313/servicos/terapeuticas/</guid>
       <description>&lt;h2 id=&#34;massagens-terapêuticas&#34;&gt;Massagens Terapêuticas&lt;/h2&gt;&#xA;&lt;p&gt;Nossas massagens terapêuticas são focadas no alívio de dores e desconfortos específicos. Utilizamos técnicas avançadas para tratar tensões musculares crônicas, melhorar a mobilidade e promover a recuperação física.&lt;/p&gt;&#xA;&lt;h3 id=&#34;terapêutica-manual&#34;&gt;Terapêutica Manual&lt;/h3&gt;&#xA;&lt;p&gt;A massagem terapêutica manual combina diferentes técnicas para tratar problemas musculoesqueléticos específicos. O tratamento é personalizado de acordo com as necessidades de cada cliente, focando nas áreas de tensão e dor.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Benefícios:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Alívio de dores musculares e articulares&lt;/li&gt;&#xA;&lt;li&gt;Redução de tensões crônicas&lt;/li&gt;&#xA;&lt;li&gt;Melhoria da mobilidade e amplitude de movimento&lt;/li&gt;&#xA;&lt;li&gt;Aceleração da recuperação de lesões&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Duração:&lt;/strong&gt; 60 ou 90 minutos&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Outras Terapias</title>
+      <link>http://localhost:1313/servicos/outros/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/servicos/outros/</guid>
+      <description>&lt;h2 id=&#34;outras-terapias&#34;&gt;Outras Terapias&lt;/h2&gt;&#xA;&lt;p&gt;Além das massagens tradicionais, oferecemos serviços especializados para atender a diferentes necessidades e ocasiões.&lt;/p&gt;&#xA;&lt;h3 id=&#34;quick-massage&#34;&gt;Quick Massage&lt;/h3&gt;&#xA;&lt;p&gt;ipsum lori&lt;/p&gt;&#xA;&lt;h3 id=&#34;massagem-a-dois&#34;&gt;Massagem a Dois&lt;/h3&gt;&#xA;&lt;p&gt;ipsum lori&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reiki e Quantum Touch</title>
+      <link>http://localhost:1313/servicos/energeticas/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/servicos/energeticas/</guid>
+      <description>&lt;p&gt;Oferecemos abordagens energéticas como complemento não-invasivo e opcional aos nossos tratamentos. Estas técnicas trabalham com o campo energético do corpo para promover equilíbrio e bem-estar.&lt;/p&gt;&#xA;&lt;h2 id=&#34;reiki&#34;&gt;Reiki&lt;/h2&gt;&#xA;&lt;h2 id=&#34;quantum-touch&#34;&gt;Quantum Touch&lt;/h2&gt;</description>
+    </item>
   </channel>
 </rss>

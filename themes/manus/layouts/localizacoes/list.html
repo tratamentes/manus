@@ -1,4 +1,5 @@
 {{ define "main" }}
+<!-- Header da página com altura adequada e espaçamento correto -->
 <section class="page-header" style="background-image: url('{{ "images/locations-header.jpg" | relURL }}');">
     <div class="container">
         <div class="page-header-content">
@@ -13,10 +14,11 @@
     </div>
 </section>
 
+<!-- Introdução com espaçamento harmonioso -->
 <section class="locations-intro">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 offset-lg-2">
+            <div class="col-lg-12">
                 <div class="text-center">
                     <p class="lead">{{ .Content }}</p>
                     <p>Escolha a localização mais conveniente para si e agende a sua consulta.</p>
@@ -26,29 +28,28 @@
     </div>
 </section>
 
+<!-- Lista de localizações com layout consistente -->
 <section class="locations-list">
     <div class="container">
         <!-- Lisboa Braamcamp -->
         <div class="location-item">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="location-map">
-                        <div class="map-container">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.2758857509283!2d-9.15529!3d38.7267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19330dd67506a9%3A0x891e3f085e6114ea!2sR.%20Braamcamp%2C%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1650000000000!5m2!1spt-PT!2spt" 
-                                width="100%" 
-                                height="450" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.2758857509283!2d-9.15529!3d38.7267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19330dd67506a9%3A0x891e3f085e6114ea!2sR.%20Braamcamp%2C%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1650000000000!5m2!1spt-PT!2spt" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="location-details">
-                        <h2>Lisboa (Braamcamp) </h2>
+                        <h2>Lisboa (Braamcamp)</h2>
                         <div class="location-info">
                             <div class="location-info-item">
                                 <div class="location-icon">
@@ -98,23 +99,21 @@
         <div class="location-item">
             <div class="row align-items-center flex-lg-row-reverse">
                 <div class="col-lg-6">
-                    <div class="location-map">
-                        <div class="map-container">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.7677848861257!2d-9.14667!3d38.7573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933a3d5920cb3%3A0x1d480f6feae2893!2sAlvalade%2C%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1650000000000!5m2!1spt-PT!2spt" 
-                                width="100%" 
-                                height="450" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.7677848861257!2d-9.14667!3d38.7573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933a3d5920cb3%3A0x1d480f6feae2893!2sAlvalade%2C%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1650000000000!5m2!1spt-PT!2spt" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="location-details">
-                        <h2>Lisboa (Alvalade) </h2>
+                        <h2>Lisboa (Alvalade)</h2>
                         <div class="location-info">
                             <div class="location-info-item">
                                 <div class="location-icon">
@@ -164,23 +163,21 @@
         <div class="location-item">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="location-map">
-                        <div class="map-container">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.8962247421184!2d-9.42291!3d38.7139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ec4424408b15b%3A0x4c2eb688a7af7be7!2sBairro%20do%20Ros%C3%A1rio%2C%20Cascais!5e0!3m2!1spt-PT!2spt!4v1650000000000!5m2!1spt-PT!2spt" 
-                                width="100%" 
-                                height="450" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.8962247421184!2d-9.42291!3d38.7139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ec4424408b15b%3A0x4c2eb688a7af7be7!2sBairro%20do%20Ros%C3%A1rio%2C%20Cascais!5e0!3m2!1spt-PT!2spt!4v1650000000000!5m2!1spt-PT!2spt" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="location-details">
-                        <h2>Cascais (Bairro do Rosário) </h2>
+                        <h2>Cascais (Bairro do Rosário)</h2>
                         <div class="location-info">
                             <div class="location-info-item">
                                 <div class="location-icon">
@@ -228,6 +225,7 @@
     </div>
 </section>
 
+<!-- FAQs com apenas o primeiro item aberto por padrão -->
 <section class="locations-faq bg-light">
     <div class="container">
         <div class="section-title">
@@ -235,7 +233,7 @@
         </div>
         
         <div class="row">
-            <div class="col-lg-8 offset-lg-2">
+            <div class="col-lg-12">
                 <div class="accordion" id="locationsFaq">
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingOne">
@@ -294,6 +292,7 @@
     </div>
 </section>
 
+<!-- CTA simples e eficaz -->
 <section class="cta-section">
     <div class="container">
         <div class="cta-content">

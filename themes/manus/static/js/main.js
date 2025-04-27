@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initMobileSubmenu();
     initAccordion();
     initContactForm();
-    // Não precisamos chamar setupBookingModal() pois usaremos o agendar.js
 });
 
 /**
@@ -247,3 +246,210 @@ function initContactForm() {
         */
     });
 }
+
+/**
+ * JavaScript personalizado para melhorar a interatividade da página de localizações
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Animação suave para elementos ao entrarem na viewport
+    const animateElements = document.querySelectorAll('.location-info-item, .location-features, .location-card, .accordion-item');
+    
+    function checkVisibility() {
+        animateElements.forEach(element => {
+            if (isInViewport(element) && !element.classList.contains('visible')) {
+                element.classList.add('visible');
+            }
+        });
+    }
+    
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.9 &&
+            rect.bottom >= 0
+        );
+    }
+    
+    // Verificar elementos visíveis no carregamento inicial
+    checkVisibility();
+    
+    // Verificar ao rolar a página
+    window.addEventListener('scroll', checkVisibility);
+    
+    // Smooth scroll para links de âncora
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href') !== '#') {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100, // Ajuste para o header fixo
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Modal de agendamento
+    const bookingButtons = document.querySelectorAll('.open-booking-modal');
+    const modal = document.getElementById('modalAgendamento');
+    
+    bookingButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Obter a localização do botão, se disponível
+            const location = this.dataset.location || '';
+            
+            // Configurar o iframe com parâmetro de localização
+            const iframe = document.getElementById('frameAgendamento');
+            iframe.src = '/sistema-agendamento/?location=' + encodeURIComponent(location);
+            
+            // Abrir o modal
+            openModal();
+        });
+    });
+    
+    function openModal() {
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.classList.add('modal-aberto');
+            
+            // Adicionar classe active após um pequeno delay para ativar a transição
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+        }
+    }
+    
+    // Função para fechar o modal (utilizada pelo botão de fechar)
+    window.fecharModal = function() {
+        if (modal) {
+            modal.classList.remove('active');
+            
+            // Esperar a transição terminar antes de esconder o modal
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.classList.remove('modal-aberto');
+                
+                // Limpar o src do iframe quando o modal for fechado
+                const iframe = document.getElementById('frameAgendamento');
+                iframe.src = '';
+            }, 300);
+        }
+    };
+    
+    // Fechar o modal ao clicar fora do conteúdo
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                window.fecharModal();
+            }
+        });
+    }
+    
+    // Lidar com a tecla ESC para fechar o modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+            window.fecharModal();
+        }
+    });
+    
+    // Adicionar hover effects nos cartões de localização
+    const locationCards = document.querySelectorAll('.location-card');
+    
+    locationCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.08)';
+        });
+    });
+    
+    // Adicionar funcionalidade de "Copiar endereço" nos ícones de localização
+    const addressItems = document.querySelectorAll('.location-info-item');
+    
+    addressItems.forEach(item => {
+        const icon = item.querySelector('.location-icon');
+        const addressText = item.querySelector('p');
+        
+        if (icon && addressText && addressText.textContent.includes('Rua')) {
+            icon.style.cursor = 'pointer';
+            icon.setAttribute('title', 'Clique para copiar o endereço');
+            
+            icon.addEventListener('click', function() {
+                const tempTextArea = document.createElement('textarea');
+                tempTextArea.value = addressText.textContent.trim();
+                document.body.appendChild(tempTextArea);
+                tempTextArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempTextArea);
+                
+                // Feedback visual
+                showToast('Endereço copiado para a área de transferência!');
+            });
+        }
+    });
+    
+    // Função para mostrar mensagem toast
+    function showToast(message) {
+        // Verificar se já existe um toast
+        let toast = document.querySelector('.toast-message');
+        
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.className = 'toast-message';
+            document.body.appendChild(toast);
+            
+            // Estilo do toast
+            toast.style.position = 'fixed';
+            toast.style.bottom = '20px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            toast.style.color = 'white';
+            toast.style.padding = '10px 20px';
+            toast.style.borderRadius = '4px';
+            toast.style.zIndex = '9999';
+            toast.style.opacity = '0';
+            toast.style.transition = 'opacity 0.3s ease';
+        }
+        
+        toast.textContent = message;
+        
+        // Mostrar o toast
+        setTimeout(() => {
+            toast.style.opacity = '1';
+        }, 10);
+        
+        // Esconder após 3 segundos
+        setTimeout(() => {
+            toast.style.opacity = '0';
+        }, 3000);
+    }
+    
+    // Adicionar contador de localizações disponíveis
+    const locationCount = document.querySelectorAll('.location-card').length;
+    const introSection = document.querySelector('.locations-intro p');
+    
+    if (introSection && locationCount > 0) {
+        const countText = document.createElement('div');
+        countText.className = 'location-count mt-4';
+        countText.innerHTML = `
+            <span class="badge" style="background-color: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; font-weight: 500;">
+                ${locationCount} ${locationCount === 1 ? 'localização disponível' : 'localizações disponíveis'}
+            </span>
+        `;
+        introSection.parentNode.appendChild(countText);
+    }
+});
